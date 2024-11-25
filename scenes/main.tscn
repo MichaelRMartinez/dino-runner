@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://bilxlf0emulbp"]
+
+[ext_resource type="Texture2D" uid="uid://uvdun2oxmimw" path="res://sprites/Background/background_static.png" id="1_3tdon"]
+[ext_resource type="PackedScene" uid="uid://y3jpmgunwkc0" path="res://scenes/platform.tscn" id="2_tn7by"]
+
+[node name="World" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(1.5, 1.5)
+
+[node name="Background" type="Sprite2D" parent="Camera2D"]
+texture = ExtResource("1_3tdon")
+
+[node name="Environment" type="Node" parent="."]
+
+[node name="Static" type="Node2D" parent="Environment"]
+
+[node name="Moving" type="Node" parent="Environment"]
+
+[node name="Platform" parent="Environment/Moving" instance=ExtResource("2_tn7by")]
